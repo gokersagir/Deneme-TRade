@@ -1,0 +1,17 @@
+[project]
+name = "deneme-trade"
+version = "0.1.0"
+description = "BIST 100 daily technical scanner and buy/sell report generator"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+live = ["yfinance>=0.2", "pandas>=2.0"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+trade-scan = "trade_reporter.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
